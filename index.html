@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>El-Shazly Physiotherapy Center</title>
+  <meta name="description" content="مركز El-Shazly للعلاج الطبيعي وإعادة التأهيل، يقدم خدمات العلاج الطبيعي، الطب النفسي، والتخاطب تحت إشراف نخبة من الأخصائيين.">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+  <header class="hero">
+    <div class="overlay">
+      <h1>El-Shazly Physiotherapy Center</h1>
+      <p>نرعاك بعناية متكاملة نحو صحة أفضل</p>
+      <a href="#booking" class="cta-btn">احجز الآن</a>
+    </div>
+  </header>
+
+  <section id="services" class="services">
+    <h2>تخصصاتنا</h2>
+    <div class="service-cards">
+      <div class="card">
+        <img src="images/physio.jpg" alt="العلاج الطبيعي">
+        <h3>العلاج الطبيعي</h3>
+        <p>جلسات علاج طبيعي وتأهيل عضلي وعصبي بأحدث التقنيات العالمية.</p>
+      </div>
+      <div class="card">
+        <img src="images/psychology.jpg" alt="الطب النفسي">
+        <h3>الطب النفسي</h3>
+        <p>رعاية نفسية متكاملة لعلاج الاكتئاب، القلق، واضطرابات السلوك.</p>
+      </div>
+      <div class="card">
+        <img src="images/speech.jpg" alt="التخاطب">
+        <h3>التخاطب</h3>
+        <p>جلسات تخاطب للأطفال والكبار لتحسين النطق والتواصل اللفظي.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="reviews" class="reviews">
+    <h2>آراء العملاء</h2>
+    <blockquote>“خدمة ممتازة ونتائج ملموسة في وقت قصير، شكرًا مركز الشاذلي.”</blockquote>
+    <blockquote>“تعامل راقٍ وفريق محترف جدًا، أنصح به بشدة.”</blockquote>
+  </section>
+
+  <!-- ✅ نموذج حجز واحد فقط -->
+  <section id="booking" class="booking">
+    <h2>احجز موعدك الآن</h2>
+    <form id="bookingForm">
+  <input type="text" id="name" placeholder="الاسم الكامل" required />
+  <input type="tel" id="phone" placeholder="رقم الهاتف" required />
+  <select id="service" required>
+    <option value="">اختر التخصص</option>
+    <option>العلاج الطبيعي</option>
+    <option>الطب النفسي</option>
+    <option>التخاطب</option>
+  </select>
+  <textarea id="message" placeholder="ملاحظات إضافية"></textarea>
+  <button type="submit">احجز الآن</button>
+</form>
+  </section>
+
+  <footer>
+    <p>© 2025 El-Shazly Physiotherapy Center — جميع الحقوق محفوظة</p>
+  </footer>
+
+  <script>
+document.addEventListener("DOMContentLoaded", function () {
+  const form = document.getElementById("bookingForm");
+
+  form.addEventListener("submit", function (e) {
+    e.preventDefault();
+
+    // التقاط البيانات
+    const name = document.getElementById("name").value.trim();
+    const phone = document.getElementById("phone").value.trim();
+    const service = document.getElementById("service").value.trim();
+    const message = document.getElementById("message").value.trim() || "بدون ملاحظات";
+
+    // بناء نص الرسالة
+    const text = `👋 مرحبًا، أنا ${name}\n📞 رقم الهاتف: ${phone}\n🩺 التخصص: ${service}\n💬 الملاحظات: ${message}`;
+
+    // تحويل النص إلى صيغة آمنة للرابط
+    const encodedText = encodeURIComponent(text);
+
+    // رقم الواتساب الصحيح
+    const whatsappNumber = "201128685168";
+
+    // تكوين الرابط النهائي
+    const whatsappURL = `https://api.whatsapp.com/send?phone=${whatsappNumber}&text=${encodedText}`;
+
+    // فتح الواتساب بنفس الصفحة
+    window.location.href = whatsappURL;
+  });
+});
+</script>
+
+</body>
+</html>
