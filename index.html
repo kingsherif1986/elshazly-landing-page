@@ -4,8 +4,47 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>El-Shazly Physiotherapy Center</title>
-  <meta name="description" content="مركز El-Shazly للعلاج الطبيعي وإعادة التأهيل، يقدم خدمات العلاج الطبيعي، الطب النفسي، والتخاطب تحت إشراف نخبة من الأخصائيين.">
+  <meta name="description" content="مركز El-Shazly للعلاج الطبيعي وإعادة التأهيل، يقدم خدمات علاج طبيعي، تغذية علاجية، تخاطب، طب نفسي، وغيرها من التخصصات.">
   <link rel="stylesheet" href="styles.css" />
+
+  <!-- مكتبة الأيقونات -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <style>
+    /* زرّي الواتساب والاتصال */
+    .floating-buttons {
+      position: fixed;
+      bottom: 20px;
+      left: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      z-index: 999;
+    }
+
+    .floating-buttons a {
+      width: 55px;
+      height: 55px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      background-color: #25D366;
+      color: white;
+      text-decoration: none;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+      font-size: 24px;
+      transition: transform 0.3s ease;
+    }
+
+    .floating-buttons a.call {
+      background-color: #0A74DA;
+    }
+
+    .floating-buttons a:hover {
+      transform: scale(1.1);
+    }
+  </style>
 </head>
 
 <body>
@@ -18,52 +57,116 @@
   </header>
 
   <section id="services" class="services">
-    <h2>تخصصاتنا</h2>
-    <div class="service-cards">
-      <div class="card">
-        <img src="images/physio.jpg" alt="العلاج الطبيعي">
-        <h3>العلاج الطبيعي</h3>
-        <p>جلسات علاج طبيعي وتأهيل عضلي وعصبي بأحدث التقنيات العالمية.</p>
-      </div>
-      <div class="card">
-        <img src="images/psychology.jpg" alt="الطب النفسي">
-        <h3>الطب النفسي</h3>
-        <p>رعاية نفسية متكاملة لعلاج الاكتئاب، القلق، واضطرابات السلوك.</p>
-      </div>
-      <div class="card">
-        <img src="images/speech.jpg" alt="التخاطب">
-        <h3>التخاطب</h3>
-        <p>جلسات تخاطب للأطفال والكبار لتحسين النطق والتواصل اللفظي.</p>
-      </div>
+  <h2>تخصصاتنا</h2>
+  <div class="service-cards">
+    <!-- الصف الأول -->
+    <div class="card">
+      <img src="images/rehab.jpg" alt="علاج طبيعي وإصابات">
+      <h3>علاج طبيعي وإصابات</h3>
+      <p>جلسات علاج طبيعي وتأهيل للإصابات العضلية والرياضية بأحدث التقنيات.</p>
     </div>
-  </section>
+    <div class="card">
+      <img src="images/nutrition.jpg" alt="تغذية علاجية ونحت">
+      <h3>تغذية علاجية ونحت</h3>
+      <p>برامج تغذية علمية لتحقيق الوزن المثالي والنحت بطريقة آمنة وصحية.</p>
+    </div>
+    <div class="card">
+      <img src="images/jaw.jpg" alt="أمراض الفك">
+      <h3>أمراض الفك</h3>
+      <p>علاج ألم المفصل الفكي الصدغي واضطرابات حركة الفك بإشراف مختصين.</p>
+    </div>
 
-  <section id="reviews" class="reviews">
-    <h2>آراء العملاء</h2>
-    <blockquote>“خدمة ممتازة ونتائج ملموسة في وقت قصير، شكرًا مركز الشاذلي.”</blockquote>
-    <blockquote>“تعامل راقٍ وفريق محترف جدًا، أنصح به بشدة.”</blockquote>
-  </section>
+    <!-- الصف الثاني -->
+    <div class="card">
+      <img src="images/pelvic.jpg" alt="علاج عضلات الحوض">
+      <h3>علاج طبيعي لعضلات الحوض</h3>
+      <p>علاج مشاكل التبول اللاإرادي وآلام الحوض بأحدث طرق العلاج الطبيعي.</p>
+    </div>
+    <div class="card">
+      <img src="images/speech.jpg" alt="التخاطب">
+      <h3>التخاطب</h3>
+      <p>جلسات تخاطب للأطفال والكبار لتحسين النطق والتواصل اللفظي.</p>
+    </div>
+    <div class="card">
+      <img src="images/psychology.jpg" alt="الطب النفسي">
+      <h3>الطب النفسي</h3>
+      <p>دعم نفسي وعلاجات معرفية سلوكية لحالات الاكتئاب، القلق، واضطرابات المزاج.</p>
+    </div>
+  </div>
+</section>
 
-  <!-- ✅ نموذج حجز واحد فقط -->
   <section id="booking" class="booking">
     <h2>احجز موعدك الآن</h2>
     <form id="bookingForm">
-  <input type="text" id="name" placeholder="الاسم الكامل" required />
-  <input type="tel" id="phone" placeholder="رقم الهاتف" required />
-  <select id="service" required>
-    <option value="">اختر التخصص</option>
-    <option>العلاج الطبيعي</option>
-    <option>الطب النفسي</option>
-    <option>التخاطب</option>
-  </select>
-  <textarea id="message" placeholder="ملاحظات إضافية"></textarea>
-  <button type="submit">احجز الآن</button>
-</form>
+      <input type="text" id="name" placeholder="الاسم الكامل" required />
+      <input type="tel" id="phone" placeholder="رقم الهاتف" required />
+
+      <select id="branch" required>
+        <option value="">اختر الفرع</option>
+        <option>كفر الزيات</option>
+        <option>طنطا</option>
+        <option>دمنهور</option>
+      </select>
+
+      <select id="service" required>
+        <option value="">اختر التخصص</option>
+        <option>علاج طبيعي وإصابات</option>
+        <option>تغذية علاجية ونحت</option>
+        <option>أمراض الفك</option>
+        <option>علاج طبيعي لمشاكل عضلات الحوض والتبول اللاإرادي</option>
+        <option>التخاطب</option>
+        <option>الطب النفسي</option>
+      </select>
+
+      <input type="date" id="date" required />
+      <select id="time" required>
+        <option value="">اختر الميعاد</option>
+        <option>09:00 صباحًا</option>
+        <option>10:00 صباحًا</option>
+        <option>11:00 صباحًا</option>
+        <option>12:00 ظهرًا</option>
+        <option>01:00 ظهرًا</option>
+        <option>02:00 عصرًا</option>
+        <option>03:00 عصرًا</option>
+        <option>04:00 مساءً</option>
+        <option>05:00 مساءً</option>
+        <option>06:00 مساءً</option>
+      </select>
+
+      <textarea id="message" placeholder="ملاحظات إضافية"></textarea>
+      <button type="submit">احجز الآن عبر واتساب</button>
+    </form>
+  </section>
+
+  <!-- ✅ قسم السوشيال ميديا -->
+  <section class="social-links" style="text-align: center; margin: 30px 0;">
+    <h3>تابعونا على السوشيال ميديا</h3>
+    <div style="display: flex; justify-content: center; gap: 20px; margin-top: 15px;">
+      <a href="https://www.facebook.com/share/19nB3BWfm7/?mibextid=wwXIfr" target="_blank" title="Facebook">
+        <i class="fab fa-facebook fa-2x" style="color: #1877F2;"></i>
+      </a>
+      <a href="https://www.instagram.com/elshazly276?igsh=MXN0c2xuMnFmMjJpeA==" target="_blank" title="Instagram">
+        <i class="fab fa-instagram fa-2x" style="color: #E1306C;"></i>
+      </a>
+      <a href="https://www.tiktok.com/@ahmedelshazly863?_t=ZS-90n773wXTXT&_r=1" target="_blank" title="TikTok">
+        <i class="fab fa-tiktok fa-2x" style="color: #000;"></i>
+      </a>
+    </div>
   </section>
 
   <footer>
     <p>© 2025 El-Shazly Physiotherapy Center — جميع الحقوق محفوظة</p>
   </footer>
+
+  <!-- ✅ أزرار واتساب واتصال -->
+  <div class="floating-buttons">
+    <a href="https://wa.me/201128685168" class="whatsapp" target="_blank" title="تحدث عبر واتساب">
+      <i class="fab fa-whatsapp"></i>
+    </a>
+    <a href="tel:+201128685168" class="call" title="اتصل الآن">
+      <i class="fas fa-phone"></i>
+    </a>
+  </div>
 
   <script>
 document.addEventListener("DOMContentLoaded", function () {
@@ -72,29 +175,35 @@ document.addEventListener("DOMContentLoaded", function () {
   form.addEventListener("submit", function (e) {
     e.preventDefault();
 
-    // التقاط البيانات
     const name = document.getElementById("name").value.trim();
     const phone = document.getElementById("phone").value.trim();
+    const branch = document.getElementById("branch").value.trim();
     const service = document.getElementById("service").value.trim();
+    const date = document.getElementById("date").value.trim();
+    const time = document.getElementById("time").value.trim();
     const message = document.getElementById("message").value.trim() || "بدون ملاحظات";
 
-    // بناء نص الرسالة
-    const text = `👋 مرحبًا، أنا ${name}\n📞 رقم الهاتف: ${phone}\n🩺 التخصص: ${service}\n💬 الملاحظات: ${message}`;
-
-    // تحويل النص إلى صيغة آمنة للرابط
-    const encodedText = encodeURIComponent(text);
-
-    // رقم الواتساب الصحيح
-    const whatsappNumber = "201128685168";
-
-    // تكوين الرابط النهائي
-    const whatsappURL = `https://api.whatsapp.com/send?phone=${whatsappNumber}&text=${encodedText}`;
-
-    // فتح الواتساب بنفس الصفحة
-    window.location.href = whatsappURL;
+    // ✅ إرسال البيانات إلى Google Sheet
+    fetch("https://script.google.com/macros/s/AKfycbyuQRrsRLpFbxe1IUvgz_McAgh3FwU-FZEeaWRSxMLT-Zmyeq3ZcOstK1wJCGGLGYog/exec", {
+      method: "POST",
+      body: new URLSearchParams({
+        "الاسم": name,
+        "الهاتف": phone,
+        "التخصص": service,
+        "الملاحظات": message,
+        "التاريخ والوقت": `${date} - ${time}`
+      }),
+    })
+    .then((res) => res.text())
+    .then(() => {
+      // ✅ بعد الإرسال إلى الشيت، يتم فتح واتساب
+      const text = `👋 مرحبًا، أنا ${name}\n📞 الهاتف: ${phone}\n📍 الفرع: ${branch}\n🩺 التخصص: ${service}\n📅 التاريخ: ${date}\n⏰ الميعاد: ${time}\n💬 الملاحظات: ${message}`;
+      const encodedText = encodeURIComponent(text);
+      const whatsappNumber = "201128685168";
+      const whatsappURL = `https://api.whatsapp.com/send?phone=${whatsappNumber}&text=${encodedText}`;
+      window.location.href = whatsappURL;
+    })
+    .catch((err) => alert("حدث خطأ أثناء إرسال البيانات 😞"));
   });
 });
 </script>
-
-</body>
-</html>
